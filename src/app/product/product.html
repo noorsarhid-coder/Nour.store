@@ -1,0 +1,9 @@
+<p>product works!</p>
+<div>
+    <img [src]="url()">
+    <p>{{ name() ? name() : 'Unknown Product' }}</p>
+    <p>price : {{ price() }}</p>
+    @if (price() < 2 ? true : false) {
+      <p>This product is cheap!</p>
+    }
+</div>
