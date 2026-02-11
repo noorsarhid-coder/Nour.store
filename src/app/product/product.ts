@@ -8,6 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class Product {
   name = input();
-  price = input.required();
+  price = input.required<number>();
   url = input();
 }
