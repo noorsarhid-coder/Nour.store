@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Product } from './product/product';
 import { Caroussel } from './caroussel/caroussel';
@@ -12,5 +12,11 @@ import { ProductService } from './product-service';
 })
 export class App {
   private productService = inject(ProductService);
-  products = this.productService.getProducts();
+  products = signal<any[]>([]);
+
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data: any) => {
+      this.products.set(data.products);
+    });
+  }
 }

@@ -2,7 +2,8 @@
 <main>
   <p>Nour's caroussel works!</p>
   <app-caroussel></app-caroussel>
-  @for (product of products; track product.price) {
+  @for (product of products(); track product.price) {
+    hello
     <app-product [name]="product.name" [price]="product.price" [url]="product.url"></app-product>
   }
 
