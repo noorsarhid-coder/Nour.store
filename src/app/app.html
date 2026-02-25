@@ -1,5 +1,8 @@
 
 <main>
+  <header> <a [routerLink]="[`/add-product`]">add new product</a>
+  <a [routerLink]="[`/`]">go back to home</a></header>
+  <router-outlet></router-outlet>
   <p>Nour's caroussel works!</p>
   <app-caroussel></app-caroussel>
   @for (product of products(); track product.price) {
